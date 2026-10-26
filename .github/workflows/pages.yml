@@ -22,7 +22,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download v1.0.0 --repo "$GITHUB_REPOSITORY" --pattern portfolio.tar.gz --pattern portfolio.sha256
+          gh release download v1.0.0 --clobber --repo "$GITHUB_REPOSITORY" --pattern portfolio.tar.gz --pattern portfolio.sha256
           sha256sum -c portfolio.sha256
           tar -xzf portfolio.tar.gz
           test -f dist/index.html
