@@ -25,9 +25,9 @@ jobs:
           gh release download v1.1.0 --clobber --repo "$GITHUB_REPOSITORY" --pattern portfolio.tar.gz --pattern portfolio.sha256
           sha256sum -c portfolio.sha256
           tar -xzf portfolio.tar.gz
-          gh release download v1.3.0 --clobber --repo "$GITHUB_REPOSITORY" --pattern portrait-motion.tar.gz
-          echo "80bbc8e26f4c56533c9a5895092b01e6f6aba0b1245787bcbde6726313105659  portrait-motion.tar.gz" | sha256sum -c -
-          tar -xzf portrait-motion.tar.gz
+          gh release download v1.4.0 --clobber --repo "$GITHUB_REPOSITORY" --pattern portrait-eyes.tar.gz
+          echo "19b76df8916f289062b636537abd0c4be172cdca36c2225e39916cd20e4546ac  portrait-eyes.tar.gz" | sha256sum -c -
+          tar -xzf portrait-eyes.tar.gz
           test -f dist/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
