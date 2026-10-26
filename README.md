@@ -1,17 +1,21 @@
 # Sarfraz Ahmad — Art Playground
 
-Game art, UI/UX and interactive Spine animation portfolio. Includes 8 characters, 24 skin variants, project galleries and animated backgrounds.
+Live portfolio: https://asarfraz447.github.io/sarfraz-portfolio/
 
-The complete site is stored in numbered archive parts to support browser upload limits. GitHub Actions reconstructs and verifies the archive, then publishes dist/ to GitHub Pages.
+Game art, UI/UX and interactive Spine animation portfolio, including 8 characters, 24 skin variants, galleries and background effects.
 
-## Unpack locally
+## Complete editable website
+
+Download `portfolio.tar.gz` and `portfolio.sha256` from the v1.0.0 release:
+https://github.com/asarfraz447/sarfraz-portfolio/releases/tag/v1.0.0
 
 ```sh
-cat portfolio.tar.gz.part-* > portfolio.tar.gz
 sha256sum -c portfolio.sha256
 tar -xzf portfolio.tar.gz
 ```
 
-The editable HTML, JavaScript, CSS, JSON, textures and all other site assets are inside dist/ after extraction. Serve that folder with a local HTTP server to test.
+All HTML, CSS, JavaScript, JSON, Spine atlases and textures are inside `dist/`. Serve that folder over HTTP to preview locally.
 
-Artwork and other assets remain the property of their respective owners. No reuse license is granted by this repository.
+The Pages workflow downloads the release archive, verifies its checksum and publishes `dist/`. The standalone `portfolio.tar.gz.part-000` in this branch is a partial upload from the initial transfer; use the complete release archive.
+
+Artwork and assets remain the property of their respective owners. No reuse license is granted.
