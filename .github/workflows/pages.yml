@@ -18,13 +18,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Download complete website
+      - name: Download complete website and portrait update
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release download v1.1.0 --clobber --repo "$GITHUB_REPOSITORY" --pattern portfolio.tar.gz --pattern portfolio.sha256
           sha256sum -c portfolio.sha256
           tar -xzf portfolio.tar.gz
+          gh release download v1.2.0 --clobber --repo "$GITHUB_REPOSITORY" --pattern portrait-update.tar.gz
+          echo "65be5618b8b2d5af0d0ecf5e85a65c84abce85effca452c49c210b780e2ccf7c  portrait-update.tar.gz" | sha256sum -c -
+          tar -xzf portrait-update.tar.gz
           test -f dist/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
